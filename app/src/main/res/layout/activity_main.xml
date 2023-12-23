@@ -9,9 +9,7 @@
         android:layout_height="wrap_content"
         android:text="CALCULADORA"
         android:textStyle="bold"
-        android:textSize="20dp"
-        android:layout_marginBottom="13dp"
-        android:padding="8dp" />
+        android:textSize="30dp"/>
 
     <TextView
         android:id="@+id/txtOutput"
@@ -19,180 +17,215 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/txtName"
         android:background="@drawable/rounded_border"
-        android:padding="10dp"/>
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:padding="20dp"/>
+
+    <View
+        android:id="@+id/bottomSpacer"
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"/>
 
     <LinearLayout
-        android:id="@+id/buttonContainer"
-        android:layout_width="255dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtOutput"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:orientation="horizontal">
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/myButton7"
-            android:layout_width="54dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundedd_button"
-            android:layout_margin="5dp"
-            android:text="7" />
+        <LinearLayout
+            android:id="@+id/buttonContainer"
+            android:layout_width="355dp"
+            android:layout_height="56dp"
+            android:layout_below="@id/txtOutput"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:weightSum="4">
 
-        <Button
-            android:id="@+id/myButton8"
-            android:layout_width="54dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundedd_button"
-            android:layout_margin="5dp"
-            android:text="8" />
+            <Button
+                android:id="@+id/myButton7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundedd_button"
+                android:text="7" />
 
-        <Button
-            android:id="@+id/myButton9"
-            android:layout_width="54dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundedd_button"
-            android:layout_margin="5dp"
-            android:text="9" />
+            <Button
+                android:id="@+id/myButton8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundedd_button"
+                android:text="8" />
 
-        <Button
-            android:id="@+id/myButtonDivisao"
-            android:layout_width="54dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundedd_button"
-            android:layout_margin="5dp"
-            android:text="/" />
+            <Button
+                android:id="@+id/myButton9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundedd_button"
+                android:text="9" />
 
+            <Button
+                android:id="@+id/myButtonDivisao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundedd_button"
+                android:text="/" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonContainer2"
+            android:layout_width="355dp"
+            android:layout_height="56dp"
+            android:layout_below="@id/buttonContainer"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/myButton4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundedd_button"
+                android:text="4" />
+
+            <Button
+                android:id="@+id/myButton5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundedd_button"
+                android:text="5" />
+
+            <Button
+                android:id="@+id/myButton6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundedd_button"
+                android:text="6" />
+
+            <Button
+                android:id="@+id/myButtonX"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundedd_button"
+                android:text="X" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonContainer3"
+            android:weightSum="4"
+            android:layout_width="355dp"
+            android:layout_height="56dp"
+            android:layout_below="@id/buttonContainer2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/myButton1"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/roundedd_button"
+                android:text="1" />
+
+            <Button
+                android:id="@+id/myButton2"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/roundedd_button"
+                android:text="2" />
+
+            <Button
+                android:id="@+id/myButton3"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/roundedd_button"
+                android:text="3" />
+
+            <Button
+                android:id="@+id/myButtonDiminui"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/roundedd_button"
+                android:text="-" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonContainer4"
+            android:layout_width="355dp"
+            android:weightSum="4"
+            android:layout_height="56dp"
+            android:layout_below="@id/buttonContainer3"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/myButton0"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/roundedd_button"
+                android:text="0" />
+
+            <Button
+                android:id="@+id/myButtonPonto"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/roundedd_button"
+                android:text="." />
+
+            <Button
+                android:id="@+id/myButtonResultado"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/roundedd_button"
+                android:text="=" />
+
+            <Button
+                android:id="@+id/myButtonDiminuMais"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/roundedd_button"
+                android:text="+" />
+
+        </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/buttonContainer2"
-        android:layout_below="@id/buttonContainer"
-        android:layout_width="255dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/myButton4"
-            android:layout_width="54dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundedd_button"
-            android:layout_margin="5dp"
-            android:text="4" />
-
-        <Button
-            android:id="@+id/myButton5"
-            android:layout_width="54dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundedd_button"
-            android:layout_margin="5dp"
-            android:text="5" />
-
-        <Button
-            android:id="@+id/myButton6"
-            android:layout_width="54dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundedd_button"
-            android:layout_margin="5dp"
-            android:text="6" />
-
-        <Button
-            android:id="@+id/myButtonX"
-            android:layout_width="54dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundedd_button"
-            android:layout_margin="5dp"
-            android:text="X" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/buttonContainer3"
-        android:layout_below="@id/buttonContainer2"
-        android:layout_width="255dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/myButton1"
-            android:layout_width="54dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundedd_button"
-            android:layout_margin="5dp"
-            android:text="1" />
-
-        <Button
-            android:id="@+id/myButton2"
-            android:layout_width="54dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundedd_button"
-            android:layout_margin="5dp"
-            android:text="2" />
-
-        <Button
-            android:id="@+id/myButton3"
-            android:layout_width="54dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundedd_button"
-            android:layout_margin="5dp"
-            android:text="3" />
-
-        <Button
-            android:id="@+id/myButtonDiminui"
-            android:layout_width="54dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundedd_button"
-            android:layout_margin="5dp"
-            android:text="-" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/buttonContainer4"
-        android:layout_below="@id/buttonContainer3"
-        android:layout_width="255dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/myButton0"
-            android:layout_width="54dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundedd_button"
-            android:layout_margin="5dp"
-            android:text="0" />
-
-        <Button
-            android:id="@+id/myButtonPonto"
-            android:layout_width="54dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundedd_button"
-            android:layout_margin="5dp"
-            android:text="." />
-
-        <Button
-            android:id="@+id/myButtonResultado"
-            android:layout_width="54dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundedd_button"
-            android:layout_margin="5dp"
-            android:text="=" />
-
-        <Button
-            android:id="@+id/myButtonDiminuMais"
-            android:layout_width="54dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundedd_button"
-            android:layout_margin="5dp"
-            android:text="+" />
-
-    </LinearLayout>
-
 
 </RelativeLayout>
 
