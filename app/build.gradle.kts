@@ -3,11 +3,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.calculadora"
+
+    namespace = "com.example.calculadoraapp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.calculadora"
+        applicationId = "com.example.calculadoraapp"
         minSdk = 28
         targetSdk = 33
         versionCode = 1

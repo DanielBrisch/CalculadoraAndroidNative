@@ -1,24 +1,23 @@
-package com.example.calculadora;
+package com.example.calculadoraapp;
+
+import static android.os.Build.VERSION_CODES.R;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private int num = 0;
     private Button button;
-    private TextView txtCounter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = findViewById(R.id.myButton);
-        txtCounter = findViewById(R.id.txtCounter);
+        button = findViewById(R.id.myButton7);
 
         controlaBotao();
     }
@@ -28,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 num += 1;
-                txtCounter.setText(String.valueOf(num));
             }
         });
     }
