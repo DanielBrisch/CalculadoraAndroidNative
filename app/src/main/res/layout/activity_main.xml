@@ -1,0 +1,197 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CALCULADORA"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginBottom="13dp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/txtOutput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtName"
+        android:background="@drawable/rounded_border"
+        android:padding="10dp"/>
+
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtOutput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/myButton7"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:layout_margin="5dp"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/myButton8"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:layout_margin="5dp"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/myButton9"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:layout_margin="5dp"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/myButtonDivisao"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:layout_margin="5dp"
+            android:text="/" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonContainer2"
+        android:layout_below="@id/buttonContainer"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/myButton4"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:layout_margin="5dp"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/myButton5"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:layout_margin="5dp"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/myButton6"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:layout_margin="5dp"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/myButtonX"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:layout_margin="5dp"
+            android:text="X" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonContainer3"
+        android:layout_below="@id/buttonContainer2"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/myButton1"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:layout_margin="5dp"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/myButton2"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:layout_margin="5dp"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/myButton3"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:layout_margin="5dp"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/myButtonDiminui"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:layout_margin="5dp"
+            android:text="-" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonContainer4"
+        android:layout_below="@id/buttonContainer3"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/myButton0"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:layout_margin="5dp"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/myButtonPonto"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:layout_margin="5dp"
+            android:text="." />
+
+        <Button
+            android:id="@+id/myButtonResultado"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:layout_margin="5dp"
+            android:text="=" />
+
+        <Button
+            android:id="@+id/myButtonDiminuMais"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:layout_margin="5dp"
+            android:text="+" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
