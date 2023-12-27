@@ -6,24 +6,20 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int total = 0;
-    private Button button0;
-    private Button button1;
-    private Button button2;
-    private Button button3;
-    private Button button4;
-    private Button button5;
-    private Button button6;
-    private Button button7;
-    private Button button8;
-    private Button button9;
+    private Double total = 0.0;
 
-    private TextView txtOutput;
+    private Button button0, button1, button2, button3, button4, button5, button6, button7, button8,
+            button9, buttonMais, buttonDiminui, buttonMultiplicacao, buttonDivisao, buttonIgual, buttonLimpar, buttonPonto;
 
-    private String operacao = "";
+    private TextView txtOutput, vlrParaCalcular;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +28,12 @@ public class MainActivity extends AppCompatActivity {
 
         iniciaViews();
 
-        controlaBotoes();
+        controlaBotoesNumericos();
+
+        InciaEquacoes();
     }
 
-    public void controlaBotoes() {
+    public void controlaBotoesNumericos() {
         button0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,21 +90,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        button0.setOnClickListener(new View.OnClickListener() {
+        button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 txtOutput.setText(txtOutput.getText() + "8");
             }
         });
 
-        button8.setOnClickListener(new View.OnClickListener() {
+        button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 txtOutput.setText(txtOutput.getText() + "9");
             }
         });
+    }
 
-        button9.setOnClickListener(new View.OnClickListener() {
+    public void InciaEquacoes() {
+        fazEquecaoDeSubtracao();
+        resultado();
+    }
+
+
+    public void fazEquecaoDeSubtracao() {
+        buttonDiminui.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                total = Double.parseDouble(txtOutput.getText().toString());
+                txtOutput.setText(txtOutput.getText() + "-");
+            }
+        });
+    }
+
+    public void resultado() {
+        buttonIgual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -116,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void iniciaViews() {
         txtOutput = findViewById(R.id.txtOutput);
+        vlrParaCalcular = findViewById(R.id.vlrParaCalcular);
         button1 = findViewById(R.id.myButton1);
         button2 = findViewById(R.id.myButton2);
         button3 = findViewById(R.id.myButton3);
@@ -126,5 +143,12 @@ public class MainActivity extends AppCompatActivity {
         button8 = findViewById(R.id.myButton8);
         button9 = findViewById(R.id.myButton9);
         button0 = findViewById(R.id.myButton0);
+        buttonMais = findViewById(R.id.myButtonMais);
+        buttonDiminui = findViewById(R.id.myButtonDiminui);
+        buttonMultiplicacao = findViewById(R.id.myButtonX);
+        buttonDivisao = findViewById(R.id.myButtonDivisao);
+        buttonIgual = findViewById(R.id.myButtonResultado);
+        buttonLimpar = findViewById(R.id.myButtonClear);
+        buttonPonto = findViewById(R.id.myButtonPonto);
     }
 }

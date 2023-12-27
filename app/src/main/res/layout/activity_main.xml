@@ -11,24 +11,58 @@
         android:textStyle="bold"
         android:textSize="30dp"/>
 
-    <TextView
-        android:id="@+id/txtOutput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtName"
-        android:background="@drawable/rounded_border"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"
-        android:padding="20dp"/>
 
-    <View
-        android:id="@+id/bottomSpacer"
+    <FrameLayout
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
-        android:layout_height="16dp"
-        android:layout_alignParentBottom="true"
-        android:visibility="invisible"/>
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_border"
+            android:textStyle="bold"
+            android:text="0"
+            android:paddingTop="30dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp"
+            android:textSize="20dp"
+            android:gravity="right"/>
+
+        <TextView
+            android:id="@+id/vlrParaCalcular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="0"
+            android:paddingTop="6dp"
+            android:layout_marginRight="10dp"
+            android:paddingRight="11dp"
+            android:textSize="14dp"
+            android:gravity="right"/>
+
+    </FrameLayout>
 
     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ContainerTop"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/myButtonClear"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/roundedd_button"
+            android:text="C" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ContainerTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -216,7 +250,7 @@
                 android:text="=" />
 
             <Button
-                android:id="@+id/myButtonDiminuMais"
+                android:id="@+id/myButtonMais"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
