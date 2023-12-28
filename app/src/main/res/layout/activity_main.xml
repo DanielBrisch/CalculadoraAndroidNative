@@ -31,6 +31,7 @@
             android:textSize="20dp"
             android:gravity="right"/>
 
+
         <TextView
             android:id="@+id/ultimoValor"
             android:layout_width="match_parent"
