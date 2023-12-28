@@ -18,7 +18,12 @@ public class MainActivity extends AppCompatActivity {
     private Button button0, button1, button2, button3, button4, button5, button6, button7, button8,
             button9, buttonMais, buttonDiminui, buttonMultiplicacao, buttonDivisao, buttonIgual, buttonLimpar, buttonPonto;
 
-    private TextView txtOutput, vlrParaCalcular;
+    private TextView txtOutput, ultimoValor;
+
+    private List<String> lsOperadores = new ArrayList<>();
+    private List<Double> lsValores = new ArrayList<>();
+
+    boolean primeiroClick = true;
 
 
     @Override
@@ -27,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         iniciaViews();
+
+//        buttonLimpar.setBackgroundColor(0xFFFFA500);
 
         controlaBotoesNumericos();
 
@@ -106,33 +113,91 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void InciaEquacoes() {
-        fazEquecaoDeSubtracao();
+        fazEquacaoDeSubtracao();
         resultado();
     }
 
-
-    public void fazEquecaoDeSubtracao() {
+    public void fazEquacaoDeSubtracao() {
         buttonDiminui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                total = Double.parseDouble(txtOutput.getText().toString());
+                if (primeiroClick)
+                    txtOutput.setText("");
+
+                String texto = txtOutput.getText().toString();
+
+                int indice = texto.length() - 1;
+                while (indice >= 0) {
+                    if (Character.isDigit(texto.charAt(indice)) || texto.charAt(indice) == '.') {
+                        indice--;
+                    } else {
+                        break;
+                    }
+                }
+
+                if (indice < 0) {
+                    total = Double.parseDouble(texto);
+                } else {
+                    String textoNumerico = texto.substring(0, indice + 1);
+                    try {
+                        total = Double.parseDouble(textoNumerico);
+                    } catch (NumberFormatException e) {
+                        total = 0.0;
+                    }
+                }
+
+                lsValores.add(total);
                 txtOutput.setText(txtOutput.getText() + "-");
+                char ultimoCaractere = txtOutput.getText().charAt(txtOutput.getText().length() - 1);
+                lsOperadores.add(String.valueOf(ultimoCaractere));
+                primeiroClick = false;
             }
         });
+    }
+
+    public Double montaResultado() {
+
+        double resultado = lsValores.get(0);
+        for (int i = 0; i < lsOperadores.size(); i++) {
+            double proximoValor = (i + 1 < lsValores.size()) ? lsValores.get(i + 1) : 0;
+            String operador = lsOperadores.get(i);
+
+            switch (operador) {
+                case "+":
+                    resultado += proximoValor;
+                    break;
+                case "-":
+                    resultado -= proximoValor;
+                    break;
+                case "*":
+                    resultado *= proximoValor;
+                    break;
+                case "/":
+                    if (proximoValor != 0) {
+                        resultado /= proximoValor;
+                    } else {
+                        throw new ArithmeticException("Divisão por zero");
+                    }
+                    break;
+                default:
+                    throw new IllegalArgumentException("Operador inválido: " + operador);
+            }
+        }
+        return resultado;
     }
 
     public void resultado() {
         buttonIgual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                txtOutput.setText(montaResultado().toString());
             }
         });
     }
 
     public void iniciaViews() {
         txtOutput = findViewById(R.id.txtOutput);
-        vlrParaCalcular = findViewById(R.id.vlrParaCalcular);
+        ultimoValor = findViewById(R.id.ultimoValor);
         button1 = findViewById(R.id.myButton1);
         button2 = findViewById(R.id.myButton2);
         button3 = findViewById(R.id.myButton3);

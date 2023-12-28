@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:padding="16dp">
 
     <TextView
@@ -9,8 +10,8 @@
         android:layout_height="wrap_content"
         android:text="CALCULADORA"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:textSize="30dp"/>
-
 
     <FrameLayout
         android:layout_marginTop="50dp"
@@ -23,7 +24,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_border"
             android:textStyle="bold"
-            android:text="0"
+            android:text="0.0"
             android:paddingTop="30dp"
             android:paddingRight="20dp"
             android:paddingBottom="10dp"
@@ -31,7 +32,7 @@
             android:gravity="right"/>
 
         <TextView
-            android:id="@+id/vlrParaCalcular"
+            android:id="@+id/ultimoValor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -53,10 +54,10 @@
         <Button
             android:id="@+id/myButtonClear"
             android:layout_width="80dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_margin="8dp"
-            android:background="@drawable/roundedd_button"
-            android:text="C" />
+            android:text="C"
+            style="@style/EstiloBotaoPersonalizado"/>
 
     </LinearLayout>
 
@@ -71,7 +72,7 @@
         <LinearLayout
             android:id="@+id/buttonContainer"
             android:layout_width="355dp"
-            android:layout_height="56dp"
+            android:layout_height="66dp"
             android:layout_below="@id/txtOutput"
             android:layout_centerHorizontal="true"
             android:orientation="horizontal"
@@ -80,37 +81,37 @@
             <Button
                 android:id="@+id/myButton7"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/roundedd_button"
+                style="@style/EstiloBotaoPersonalizado"
                 android:text="7" />
 
             <Button
                 android:id="@+id/myButton8"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/roundedd_button"
+                style="@style/EstiloBotaoPersonalizado"
                 android:text="8" />
 
             <Button
                 android:id="@+id/myButton9"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/roundedd_button"
+                style="@style/EstiloBotaoPersonalizado"
                 android:text="9" />
 
             <Button
                 android:id="@+id/myButtonDivisao"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/roundedd_button"
+                style="@style/EstiloBotaoPersonalizado"
                 android:text="/" />
 
         </LinearLayout>
@@ -118,7 +119,7 @@
         <LinearLayout
             android:id="@+id/buttonContainer2"
             android:layout_width="355dp"
-            android:layout_height="56dp"
+            android:layout_height="66dp"
             android:layout_below="@id/buttonContainer"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
@@ -128,37 +129,37 @@
             <Button
                 android:id="@+id/myButton4"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/roundedd_button"
+                style="@style/EstiloBotaoPersonalizado"
                 android:text="4" />
 
             <Button
                 android:id="@+id/myButton5"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/roundedd_button"
+                style="@style/EstiloBotaoPersonalizado"
                 android:text="5" />
 
             <Button
                 android:id="@+id/myButton6"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/roundedd_button"
+                style="@style/EstiloBotaoPersonalizado"
                 android:text="6" />
 
             <Button
                 android:id="@+id/myButtonX"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/roundedd_button"
+                style="@style/EstiloBotaoPersonalizado"
                 android:text="X" />
 
         </LinearLayout>
@@ -167,7 +168,7 @@
             android:id="@+id/buttonContainer3"
             android:weightSum="4"
             android:layout_width="355dp"
-            android:layout_height="56dp"
+            android:layout_height="66dp"
             android:layout_below="@id/buttonContainer2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
@@ -177,36 +178,36 @@
                 android:id="@+id/myButton1"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
-                android:background="@drawable/roundedd_button"
+                style="@style/EstiloBotaoPersonalizado"
                 android:text="1" />
 
             <Button
                 android:id="@+id/myButton2"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
-                android:background="@drawable/roundedd_button"
+                style="@style/EstiloBotaoPersonalizado"
                 android:text="2" />
 
             <Button
                 android:id="@+id/myButton3"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
-                android:background="@drawable/roundedd_button"
+                style="@style/EstiloBotaoPersonalizado"
                 android:text="3" />
 
             <Button
                 android:id="@+id/myButtonDiminui"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
-                android:background="@drawable/roundedd_button"
+                style="@style/EstiloBotaoPersonalizado"
                 android:text="-" />
 
         </LinearLayout>
@@ -215,7 +216,7 @@
             android:id="@+id/buttonContainer4"
             android:layout_width="355dp"
             android:weightSum="4"
-            android:layout_height="56dp"
+            android:layout_height="66dp"
             android:layout_below="@id/buttonContainer3"
             android:layout_centerInParent="true"
             android:layout_centerHorizontal="true"
@@ -226,36 +227,36 @@
                 android:id="@+id/myButton0"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
-                android:background="@drawable/roundedd_button"
+                style="@style/EstiloBotaoPersonalizado"
                 android:text="0" />
 
             <Button
                 android:id="@+id/myButtonPonto"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
-                android:background="@drawable/roundedd_button"
+                style="@style/EstiloBotaoPersonalizado"
                 android:text="." />
 
             <Button
                 android:id="@+id/myButtonResultado"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
-                android:background="@drawable/roundedd_button"
+                style="@style/EstiloBotaoPersonalizado"
                 android:text="=" />
 
             <Button
                 android:id="@+id/myButtonMais"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
-                android:background="@drawable/roundedd_button"
+                style="@style/EstiloBotaoPersonalizado"
                 android:text="+" />
 
         </LinearLayout>
