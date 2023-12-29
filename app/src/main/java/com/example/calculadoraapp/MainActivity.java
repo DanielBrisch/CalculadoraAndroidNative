@@ -6,14 +6,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.menu.MenuBuilder;
-
-import java.util.ArrayList;
-import java.util.List;
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class MainActivity extends AppCompatActivity {
-
-    private Double total = 0.0;
 
     private Button button0, button1, button2, button3, button4, button5, button6, button7, button8,
             button9, buttonMais, buttonDiminui, buttonMultiplicacao, buttonDivisao, buttonIgual, buttonLimpar, buttonPonto;
@@ -22,15 +18,12 @@ public class MainActivity extends AppCompatActivity {
 
     boolean primeiroClick = true;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         iniciaViews();
-
-//        buttonLimpar.setBackgroundColor(0xFFFFA500);
 
         controlaBotoesNumericos();
 
@@ -140,34 +133,75 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void InciaEquacoes() {
-        fazEquacaoDeSubtracao();
+        adicao();
+        subtracao();
+        multiplicacao();
         resultado();
     }
 
-    public void fazEquacaoDeSubtracao() {
+    public void subtracao() {
         buttonDiminui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (primeiroClick)
                     txtOutput.setText("");
-
                 txtOutput.setText(txtOutput.getText() + "-");
                 primeiroClick = false;
             }
         });
     }
 
-    public String montaResultado() {
+    public void adicao() {
+        buttonMais.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (primeiroClick)
+                    txtOutput.setText("");
+                txtOutput.setText(txtOutput.getText() + "+");
+                primeiroClick = false;
+            }
+        });
+    }
 
+    public void divisao() {
+        buttonDivisao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (primeiroClick)
+                    txtOutput.setText("");
+                txtOutput.setText(txtOutput.getText() + "/");
+                primeiroClick = false;
+            }
+        });
+    }
 
-        return
+    public void multiplicacao() {
+        buttonMultiplicacao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (primeiroClick)
+                    txtOutput.setText("");
+                txtOutput.setText(txtOutput.getText() + "*");
+                primeiroClick = false;
+            }
+        });
+    }
+
+    public String converterResultado() {
+        String expressao = txtOutput.getText().toString();
+        Expression e = new ExpressionBuilder(expressao).build();
+        double resultado = e.evaluate();
+
+        return String.valueOf(resultado);
     }
 
     public void resultado() {
         buttonIgual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtOutput.setText(montaResultado());
+                txtOutput.setText(String.valueOf(converterResultado()));
+                ultimoValor.setText(txtOutput.getText());
+                primeiroClick = true;
             }
         });
     }
