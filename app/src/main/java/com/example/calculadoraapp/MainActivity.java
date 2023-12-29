@@ -20,9 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView txtOutput, ultimoValor;
 
-    private List<String> lsOperadores = new ArrayList<>();
-    private List<Double> lsValores = new ArrayList<>();
-
     boolean primeiroClick = true;
 
 
@@ -44,70 +41,100 @@ public class MainActivity extends AppCompatActivity {
         button0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (primeiroClick)
+                    txtOutput.setText("");
                 txtOutput.setText(txtOutput.getText() + "0");
+                primeiroClick = false;
             }
         });
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (primeiroClick)
+                    txtOutput.setText("");
                 txtOutput.setText(txtOutput.getText() + "1");
+                primeiroClick = false;
             }
         });
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (primeiroClick)
+                    txtOutput.setText("");
                 txtOutput.setText(txtOutput.getText() + "2");
+                primeiroClick = false;
             }
         });
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (primeiroClick)
+                    txtOutput.setText("");
                 txtOutput.setText(txtOutput.getText() + "3");
+                primeiroClick = false;
             }
         });
 
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (primeiroClick)
+                    txtOutput.setText("");
                 txtOutput.setText(txtOutput.getText() + "4");
+                primeiroClick = false;
             }
         });
 
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (primeiroClick)
+                    txtOutput.setText("");
                 txtOutput.setText(txtOutput.getText() + "5");
+                primeiroClick = false;
             }
         });
 
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (primeiroClick)
+                    txtOutput.setText("");
                 txtOutput.setText(txtOutput.getText() + "6");
+                primeiroClick = false;
             }
         });
 
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (primeiroClick)
+                    txtOutput.setText("");
                 txtOutput.setText(txtOutput.getText() + "7");
+                primeiroClick = false;
             }
         });
 
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (primeiroClick)
+                    txtOutput.setText("");
                 txtOutput.setText(txtOutput.getText() + "8");
+                primeiroClick = false;
             }
         });
 
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (primeiroClick)
+                    txtOutput.setText("");
                 txtOutput.setText(txtOutput.getText() + "9");
+                primeiroClick = false;
             }
         });
     }
@@ -124,73 +151,23 @@ public class MainActivity extends AppCompatActivity {
                 if (primeiroClick)
                     txtOutput.setText("");
 
-                String texto = txtOutput.getText().toString();
-
-                int indice = texto.length() - 1;
-                while (indice >= 0) {
-                    if (Character.isDigit(texto.charAt(indice)) || texto.charAt(indice) == '.') {
-                        indice--;
-                    } else {
-                        break;
-                    }
-                }
-
-                if (indice < 0) {
-                    total = Double.parseDouble(texto);
-                } else {
-                    String textoNumerico = texto.substring(0, indice + 1);
-                    try {
-                        total = Double.parseDouble(textoNumerico);
-                    } catch (NumberFormatException e) {
-                        total = 0.0;
-                    }
-                }
-
-                lsValores.add(total);
                 txtOutput.setText(txtOutput.getText() + "-");
-                char ultimoCaractere = txtOutput.getText().charAt(txtOutput.getText().length() - 1);
-                lsOperadores.add(String.valueOf(ultimoCaractere));
                 primeiroClick = false;
             }
         });
     }
 
-    public Double montaResultado() {
+    public String montaResultado() {
 
-        double resultado = lsValores.get(0);
-        for (int i = 0; i < lsOperadores.size(); i++) {
-            double proximoValor = (i + 1 < lsValores.size()) ? lsValores.get(i + 1) : 0;
-            String operador = lsOperadores.get(i);
 
-            switch (operador) {
-                case "+":
-                    resultado += proximoValor;
-                    break;
-                case "-":
-                    resultado -= proximoValor;
-                    break;
-                case "*":
-                    resultado *= proximoValor;
-                    break;
-                case "/":
-                    if (proximoValor != 0) {
-                        resultado /= proximoValor;
-                    } else {
-                        throw new ArithmeticException("Divisão por zero");
-                    }
-                    break;
-                default:
-                    throw new IllegalArgumentException("Operador inválido: " + operador);
-            }
-        }
-        return resultado;
+        return
     }
 
     public void resultado() {
         buttonIgual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtOutput.setText(montaResultado().toString());
+                txtOutput.setText(montaResultado());
             }
         });
     }
