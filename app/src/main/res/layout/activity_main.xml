@@ -1,20 +1,38 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    android:padding="16dp">
+    android:background="@color/black">
 
-    <TextView
-        android:id="@+id/txtName"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CALCULADORA"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textSize="30dp"/>
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/myImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/calculadora" />
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="CALCULADORA"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginTop="30dp"
+            android:textSize="30dp"/>
+
+    </LinearLayout>
+
 
     <FrameLayout
-        android:layout_marginTop="50dp"
+        android:id="@+id/ContainerValor"
+        android:layout_marginTop="140dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -22,57 +40,92 @@
             android:id="@+id/txtOutput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_border"
             android:textStyle="bold"
             android:text="0.0"
-            android:paddingTop="30dp"
+            android:paddingTop="115dp"
             android:paddingRight="20dp"
-            android:paddingBottom="10dp"
-            android:textSize="20dp"
+            android:textSize="80dp"
+            android:maxLength="15"
             android:gravity="right"/>
-
 
         <TextView
             android:id="@+id/ultimoValor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="0"
+            android:text="0.0"
             android:paddingTop="6dp"
-            android:layout_marginRight="10dp"
-            android:paddingRight="11dp"
-            android:textSize="14dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="80dp"
+            android:paddingRight="14dp"
+            android:textSize="34dp"
             android:gravity="right"/>
 
     </FrameLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
         android:layout_above="@id/ContainerTop"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/myButtonClear"
-            android:layout_width="80dp"
-            android:layout_height="60dp"
-            android:layout_margin="8dp"
-            android:text="C"
-            style="@style/EstiloBotaoPersonalizado"/>
-
-    </LinearLayout>
-
+        android:background="#FFFFFF" />
 
     <LinearLayout
         android:id="@+id/ContainerTop"
-        android:layout_width="wrap_content"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
         android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/buttonContainer0"
+            android:layout_width="380dp"
+            android:layout_height="66dp"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/myButtonClear"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:textColor="#FFA500"
+                android:text="C"
+                android:backgroundTint="@color/black"/>
+
+            <Button
+                android:id="@+id/myButtonApagar"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginTop="4dp"
+                android:layout_weight="1"
+                android:textColor="#FFA500"
+                android:backgroundTint="@color/black"
+                android:text="A" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/myButtonDivisao"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:textColor="#FFA500"
+                android:backgroundTint="@color/black"
+                android:text="/" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/buttonContainer"
-            android:layout_width="355dp"
+            android:layout_width="380dp"
             android:layout_height="66dp"
             android:layout_below="@id/txtOutput"
             android:layout_centerHorizontal="true"
@@ -85,7 +138,7 @@
                 android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                style="@style/EstiloBotaoPersonalizado"
+                android:backgroundTint="@color/black"
                 android:text="7" />
 
             <Button
@@ -94,7 +147,7 @@
                 android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                style="@style/EstiloBotaoPersonalizado"
+                android:backgroundTint="@color/black"
                 android:text="8" />
 
             <Button
@@ -103,23 +156,23 @@
                 android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                style="@style/EstiloBotaoPersonalizado"
+                android:backgroundTint="@color/black"
                 android:text="9" />
 
-            <Button
-                android:id="@+id/myButtonDivisao"
+            <ImageButton
+                android:id="@+id/myButtonX"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                style="@style/EstiloBotaoPersonalizado"
-                android:text="/" />
+                android:src="@drawable/vezes"
+                android:backgroundTint="@color/black"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/buttonContainer2"
-            android:layout_width="355dp"
+            android:layout_width="380dp"
             android:layout_height="66dp"
             android:layout_below="@id/buttonContainer"
             android:layout_centerHorizontal="true"
@@ -133,7 +186,7 @@
                 android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                style="@style/EstiloBotaoPersonalizado"
+                android:backgroundTint="@color/black"
                 android:text="4" />
 
             <Button
@@ -142,7 +195,7 @@
                 android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                style="@style/EstiloBotaoPersonalizado"
+                android:backgroundTint="@color/black"
                 android:text="5" />
 
             <Button
@@ -151,24 +204,26 @@
                 android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                style="@style/EstiloBotaoPersonalizado"
+                android:backgroundTint="@color/black"
                 android:text="6" />
 
             <Button
-                android:id="@+id/myButtonX"
+                android:id="@+id/myButtonDiminui"
+                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_margin="5dp"
-                android:layout_weight="1"
-                style="@style/EstiloBotaoPersonalizado"
-                android:text="X" />
+                android:backgroundTint="@color/black"
+                android:textColor="#ffa500 "
+                android:textSize="20dp"
+                android:text="-" />
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/buttonContainer3"
             android:weightSum="4"
-            android:layout_width="355dp"
+            android:layout_width="380dp"
             android:layout_height="66dp"
             android:layout_below="@id/buttonContainer2"
             android:layout_centerHorizontal="true"
@@ -181,7 +236,7 @@
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_margin="5dp"
-                style="@style/EstiloBotaoPersonalizado"
+                android:backgroundTint="@color/black"
                 android:text="1" />
 
             <Button
@@ -190,7 +245,7 @@
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_margin="5dp"
-                style="@style/EstiloBotaoPersonalizado"
+                android:backgroundTint="@color/black"
                 android:text="2" />
 
             <Button
@@ -199,57 +254,8 @@
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_margin="5dp"
-                style="@style/EstiloBotaoPersonalizado"
+                android:backgroundTint="@color/black"
                 android:text="3" />
-
-            <Button
-                android:id="@+id/myButtonDiminui"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_margin="5dp"
-                style="@style/EstiloBotaoPersonalizado"
-                android:text="-" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/buttonContainer4"
-            android:layout_width="355dp"
-            android:weightSum="4"
-            android:layout_height="66dp"
-            android:layout_below="@id/buttonContainer3"
-            android:layout_centerInParent="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/myButton0"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_margin="5dp"
-                style="@style/EstiloBotaoPersonalizado"
-                android:text="0" />
-
-            <Button
-                android:id="@+id/myButtonPonto"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_margin="5dp"
-                style="@style/EstiloBotaoPersonalizado"
-                android:text="." />
-
-            <Button
-                android:id="@+id/myButtonResultado"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_margin="5dp"
-                style="@style/EstiloBotaoPersonalizado"
-                android:text="=" />
 
             <Button
                 android:id="@+id/myButtonMais"
@@ -257,8 +263,59 @@
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_margin="5dp"
-                style="@style/EstiloBotaoPersonalizado"
+                android:textColor="#ffa500 "
+                android:backgroundTint="@color/black"
                 android:text="+" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonContainer4"
+            android:layout_width="380dp"
+            android:weightSum="3"
+            android:layout_height="66dp"
+            android:layout_below="@id/buttonContainer3"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/buttonHappyFace"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/black"
+                android:src="@drawable/happyface"
+                android:text="/" />
+
+            <Button
+                android:id="@+id/myButton0"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="12dp"
+                android:backgroundTint="@color/black"
+                android:text="0" />
+
+            <Button
+                android:id="@+id/myButtonPonto"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="23dp"
+                android:backgroundTint="@color/black"
+                android:text="," />
+
+            <Button
+                android:id="@+id/myButtonResultado"
+                android:layout_width="65dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="12dp"
+                style="@style/EstiloBotaoCircular"
+                android:text="=" />
 
         </LinearLayout>
     </LinearLayout>

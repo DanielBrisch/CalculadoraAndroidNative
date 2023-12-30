@@ -1,10 +1,11 @@
 <resources>
-    <style name="EstiloBotaoPersonalizado" parent="Widget.MaterialComponents.Button">
+    <style name="EstiloBotaoCircular" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/circular_button</item>
         <item name="backgroundTint">#ffa500</item>
-        <item name="cornerRadius">4dp</item>
     </style>
 
+
     <style name="Theme.CalculadoraApp" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="materialButtonStyle">@style/EstiloBotaoPersonalizado</item>
+        <item name="materialButtonStyle">@style/EstiloBotaoCircular</item>
     </style>
 </resources>
